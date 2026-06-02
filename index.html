@@ -204,14 +204,28 @@ html,body{
   }
   .bottom-nav::-webkit-scrollbar { display: none; }
   .nav-item {
-    flex: none; min-width: 70px; display: flex; flex-direction: column; align-items: center;
-    padding: .5rem .25rem calc(.5rem + env(safe-area-inset-bottom));
-    cursor: pointer; transition: all .2s;
-    font-size: 10px; letter-spacing: .03em; text-transform: uppercase;
+    flex: none; 
+    min-width: 70px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    
+    /* 修改這裡：將原本的 .5rem 改大，例如 .8rem 或 1rem */
+    /* 這樣黑色背景區塊的高度就會跟著變高 */
+    padding-top: 1rem; 
+    padding-bottom: calc(.8rem + env(safe-area-inset-bottom));
+    
+    cursor: pointer; 
+    transition: all .2s;
+    font-size: 10px; 
+    letter-spacing: .03em; 
+    text-transform: uppercase;
     color: rgba(200,169,110,.4);
-    border: none; background: none; white-space: nowrap;
+    border: none; 
+    background: none; 
+    white-space: nowrap;
   }
-  .nav-item i { font-size: 1.4rem; margin-bottom: 4px; }
+  .nav-item i { font-size: 1.6rem; margin-bottom: 5px; }
   .nav-item.active { color: var(--gold); }
   .nav-item:active { transform: scale(.92); }
 
@@ -1190,6 +1204,17 @@ html,body{
 .lang-cell.es{font-style:italic;color:var(--terra-d);font-weight:600;}
 
 
+/* 阻止 iOS 點擊輸入框時自動放大畫面 */
+  .add-form input, 
+  .add-form select, 
+  #memo-input {
+  font-size: 16px !important;
+  }
+ 
+  /* 停用整個網頁的雙擊放大功能，同時保留正常的網頁滾動與點擊 */
+  body {
+  touch-action: manipulation;
+  }
 
 
 </style>
@@ -4593,7 +4618,7 @@ html,body{
     <!-- 天氣 -->
     <div class="info-card">
       <h3><i class="fa fa-cloud-sun" style="color:var(--gold)"></i> 天氣預報</h3>
-      <a class="info-link" href=https://weather.com/zh-TW/weather/tenday/l/a06dbb655d9718eaae978fbcf7605f27f7f21bb2718ff2bb0dd1a34d31d226e6" target="_blank">
+      <a class="info-link" href="https://weather.com/zh-TW/weather/tenday/l/a06dbb655d9718eaae978fbcf7605f27d0b6acf0ea6c5b89620b311a1a661a64" target="_blank">
         <div class="il-icon" style="background:rgba(44,74,82,.15);color:var(--andes)"><i class="fa fa-cloud"></i></div>
         <div class="il-text"><div class="il-title">秘魯氣象</div><div class="il-sub">馬丘比丘天氣預報</div></div>
         <i class="fa fa-chevron-right" style="color:#C7B89A;margin-left:auto"></i>
